@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import request from 'superagent';
+import Performer from './Performer/Performer';
 
 class App extends Component {
    constructor(props){
@@ -15,17 +16,28 @@ class App extends Component {
             userId: 'ZuaqGwjNc6M47HchSJYVa2lunf03'
          })
          .end((err, res) => {
-            res ? this.setState({
-               performers: res.body
-            }) : console.log('Error fetching')
+            res 
+            ? 
+            this.setState({ performer: res.body }) 
+            : 
+            console.log('Error fetching')
          });
    }
    
    render() {
-      console.log(this.state.performers)
+      let performer;
+      if(this.state.performer) {
+         performer = <Performer 
+                        data={this.state.performer.data}
+                        products={this.state.performer.products}
+                     />
+      } else {
+         performer = <div>Loading...</div>
+      }
       return (
          <div className="App">
             <h2>Performer Info</h2>
+            {performer}
          </div>
       );
    }
