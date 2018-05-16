@@ -13,7 +13,7 @@ const Product = ({
       profileThumb,
    }) => {
    return(
-      <ProductCard>
+      <ProductCard >
          <div className={classes.imageContainer} >
             <img src={productImage} alt="product-img" className={classes.productImage} />
             <div className={classes.priceRow}>
@@ -24,10 +24,13 @@ const Product = ({
                </div>
             </div>
          </div>
-         <div className={classes.productInfo}>
-            <p><strong>Description: </strong>{description}</p>
-            <p><strong>Duration: </strong>{duration}</p>
-            <p><strong>Audience size: </strong>{audienceSize}</p>
+         <div className={classes.infoCol} >
+            <div className={classes.productInfo}>
+                  <p><strong>Description: </strong>{description}</p>
+                  <p><strong>Duration: </strong>{duration}</p>
+                  <p><strong>Audience size: </strong>{audienceSize}</p>
+            </div>
+            <button className={classes.viewDetailButton}>View details</button>
          </div>
       </ProductCard>
    );

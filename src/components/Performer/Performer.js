@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './Performer.css';
 import FacebookIcon from '../../icons/facebook.svg';
 import InstagramIcon from '../../icons/instagram.svg';
+import Product from '../Product/Product';
 
 class Performer extends Component {
    constructor(props) {
@@ -27,7 +28,7 @@ class Performer extends Component {
                      <a href={data.profile_instagram} ><img src={InstagramIcon} alt="profile-instagram" /></a>
                   </div>
                </div>
-               <p>"{data.description}"</p>
+               <p className={classes.description} >"{data.description}"</p>
             </div>
             <button onClick={e => this.handleShowProducts(e)}>
                {
@@ -38,12 +39,22 @@ class Performer extends Component {
                   `Browse performances`                     
                }
             </button>
-            <div className={classes.products}>
+            <div className={classes.productList}>
                {
                   this.state.showProducts
                   ?
                   products.map((product) => {
-                     return <div key={product.id} >{product.title}</div>
+                     return (
+                        <Product 
+                           key={product.id}
+                           description={product.description}
+                           audienceSize={product.audienceSize}
+                           duration={product.duration}
+                           id={product.id}
+                           price={product.price}
+                           productImage={product.productImage}
+                        />
+                     );
                   })
                   :
                   null

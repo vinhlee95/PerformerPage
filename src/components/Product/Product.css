@@ -32,6 +32,13 @@
    border-radius: 50%;
    margin-right: 3px;
 }
+
+.infoCol {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 100%;
+}
 .productInfo {
    width: 90%;
    margin: 5px auto;
@@ -39,7 +46,9 @@
 p {
    margin: 5px 0;
 }
-
+.viewDetailButton {
+   font-size: 15px;
+}
 /* Adjustment for desktop viewport */
 @media only screen and (min-width: 1024px) {
    .productImage {
