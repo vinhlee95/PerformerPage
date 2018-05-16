@@ -28,16 +28,18 @@ class App extends Component {
    render() {
       let performer;
       if(this.state.performer) {
+         console.log(this.state.performer[0].data);
+         console.log(this.state.performer[0].products);
          performer = <Performer 
-                        data={this.state.performer.data}
-                        products={this.state.performer.products}
+                        data={this.state.performer[0].data}
+                        products={this.state.performer[0].products}
                      />
       } else {
          performer = <Spinner />
       }
       return (
          <div className="App">
-            <h2>Performer Info</h2>
+            Header
             {performer}
          </div>
       );
