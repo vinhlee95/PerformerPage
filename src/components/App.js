@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import request from 'superagent';
 import Performer from './Performer/Performer';
+import Spinner from './UI/Spinner/Spinner';
 
 class App extends Component {
    constructor(props){
@@ -32,7 +33,7 @@ class App extends Component {
                         products={this.state.performer.products}
                      />
       } else {
-         performer = <div>Loading...</div>
+         performer = <Spinner />
       }
       return (
          <div className="App">
