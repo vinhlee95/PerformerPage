@@ -53,6 +53,8 @@ class Performer extends Component {
                            id={product.id}
                            price={product.price}
                            productImage={product.productImage}
+                           name={data.name}
+                           profileThumb={data.profileThumb}
                         />
                      );
                   })
